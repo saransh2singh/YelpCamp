@@ -1,21 +1,21 @@
 <% layout('/layouts/boilerplate.ejs') %>
     <div class="row">
-        <h1 class="text-center">Edit Campground</h1>
-        <div class="col-6 offset-3">
-            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+        <h1 class="text-center pl">Edit Campground</h1>
+        <div class="col-6 offset-3 edit-camp">
+            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form form-size" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
-                    <input class="form-control" type="text" id="title" name="campground[title]" value="<%= campground.title %>" required>
+                    <input class="form-control small" type="text" id="title" name="campground[title]" value="<%= campground.title %>" required>
                     <div class="valid-feedback">Looks good!</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="location">Location</label>
-                    <input class="form-control" type="text" id="location" name="campground[location]" value="<%= campground.location %>" required>
+                    <input class="form-control small" type="text" id="location" name="campground[location]" value="<%= campground.location %>" required>
                     <div class="valid-feedback">Looks good!</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="price">Campground Price</label>
-                <div class="input-group">
+                <div class="input-group small">
                     <span class="input-group-text" id="price-label">$</span>
                     <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price" aria-describedby="price-label" name="campground[price]" value="<%= campground.price %>" required>
                     <div class="valid-feedback">Looks good!</div>
@@ -23,10 +23,10 @@
             </div>
                 <div class="mb-3">
                     <label class="form-label" for="description">Description</label>
-                    <textarea class="form-control" type="text" id="location" name="campground[description]" required><%= campground.description %></textarea>
+                    <textarea class="form-control small" type="text" id="location" name="campground[description]" required><%= campground.description %></textarea>
                     <div class="valid-feedback">Looks good!</div>
                 </div>
-                <div class="input-group form-file mb-3">
+                <div class="input-group form-file mb-3 small">
                     <input type="file" class="form-control" id="image" name="image" multiple>
                     <label class="input-group-text" for="image">Upload</label>
                   </div>
@@ -41,10 +41,10 @@
                     <% }) %>
                 </div>
                   </div>
-                <div class="mb-3">
+                <div class="mb-3 flex">
                 <button class="btn btn-info">Update Campground</button>
             </div>
             </form>
-            <a href="/campgrounds/<%= campground._id %>">Back To Campground</a>
+            <button class="button"><a href="/campgrounds/<%= campground._id %>" class="link">Back To Campground</a></button>
         </div>
     </div>
