@@ -1,6 +1,6 @@
 <% layout('/layouts/boilerplate.ejs') %>
     <div class="row">
-        <h1 class="text-center pl">Edit Campground</h1>
+        <h1 class="text-center">Edit Campground</h1>
         <div class="col-6 offset-3 edit-camp">
             <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form form-size" enctype="multipart/form-data">
                 <div class="mb-3">
@@ -42,7 +42,7 @@
                 </div>
                   </div>
                 <div class="mb-3 flex">
-                <button class="btn btn-info">Update Campground</button>
+                <button class="btn btn-info" style="margin: 0 auto;display: flex;margin-top: 10px;">Update Campground</button>
             </div>
             </form>
             <button class="button"><a href="/campgrounds/<%= campground._id %>" class="link">Back To Campground</a></button>
